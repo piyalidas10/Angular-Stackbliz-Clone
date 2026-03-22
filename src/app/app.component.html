@@ -1,0 +1,97 @@
+<div class="app-container">
+
+  <!-- 🔝 Top Navbar -->
+  <header class="topbar">
+    <div class="logo">⚡ StackBlitz Clone</div>
+
+    <div class="actions">
+      <button (click)="runProject()">▶ Run</button>
+      <button (click)="formatCode()">✨ Format</button>
+    </div>
+  </header>
+
+  <!-- 🧱 Main Layout -->
+  <div class="main-layout">
+
+    <!-- 📁 Sidebar -->
+    <aside class="sidebar">
+        <h3>Files</h3>
+
+        <ul>
+            @for (file of fileList; track file) {
+                <li 
+                    (click)="openFile(file)"
+                    [class.active]="activeFile === file"
+                >
+                    <span class="file-icon">📄</span>
+                    {{ file }}
+                </li>
+            }
+        </ul>
+    </aside>
+
+    <!-- 📝 Editor + Preview -->
+    <section class="editor-preview">
+
+      <!-- Tabs -->
+      <div class="tabs">
+        @for (file of openFiles; track file) {
+            <div 
+                class="tab"
+                [class.active]="activeFile === file"
+                (click)="openFile(file)"
+            >
+                {{ file }}
+
+                <!-- Close button -->
+                <span 
+                class="close-btn" 
+                (click)="closeFile(file, $event)">
+                ×
+                </span>
+            </div>
+        }
+    </div>
+
+      <!-- 🔥 Split View -->
+      <div class="editor-preview-split">
+
+        <!-- Editor -->
+        <div 
+          #editor 
+          class="editor"
+          [style.width.px]="editorWidth">
+        </div>
+
+        <!-- Resizer -->
+        <div 
+          class="resizer vertical"
+          (mousedown)="startResize($event)">
+        </div>
+
+        <!-- Preview -->
+        <iframe id="preview" class="preview"></iframe>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- 🔥 Terminal Resizer -->
+  <div 
+    class="resizer horizontal"
+    (mousedown)="startVerticalResize($event)">
+  </div>
+
+  <!-- 💻 Terminal -->
+  <footer 
+    class="terminal-container"
+    [style.height.px]="terminalHeight">
+
+    <div class="terminal-header">Terminal</div>
+    <div id="terminal" class="terminal"></div>
+
+  </footer>
+
+</div>

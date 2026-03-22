@@ -1,0 +1,159 @@
+/* GLOBAL */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* APP */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #1e1e1e;
+  color: white;
+}
+
+/* TOPBAR */
+.topbar {
+  height: 40px;
+  flex-shrink: 0;
+  background: #2d2d2d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+/* MAIN */
+.main-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* SIDEBAR */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 8px 10px;
+  cursor: pointer; /* ✅ pointer like link */
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+/* Hover (like StackBlitz) */
+.sidebar li:hover {
+  background: #2a2d2e;
+}
+
+/* Active file (🔥 blue highlight) */
+.sidebar li.active {
+  background: #094771;   /* VS Code blue */
+  color: white;
+}
+
+/* Optional: smoother look */
+.sidebar li:active {
+  background: #0e639c;
+}
+
+.file-icon {
+  margin-right: 6px;
+}
+
+/* EDITOR + PREVIEW */
+.editor-preview {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* TABS */
+.tabs {
+  height: 35px;
+  background: #2d2d2d;
+  display: flex;
+}
+
+.tab {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #1e1e1e;
+  border-bottom: 2px solid #007acc;
+}
+
+/* SPLIT */
+.editor-preview-split {
+  display: flex;
+  flex: 1;
+}
+
+/* EDITOR */
+.editor {
+  height: 100%;
+  position: relative;
+  z-index: 1; /* ✅ ensure editor is clickable */
+  pointer-events: auto;
+}
+
+/* PREVIEW */
+.preview {
+  flex: 1;
+  border: none;
+  background: white;
+  pointer-events: auto; /* ✅ ensure preview is interactive */
+}
+
+/* TERMINAL */
+.terminal-container {
+  background: black;
+  overflow: hidden;
+}
+
+.terminal-header {
+  height: 25px;
+  background: #111;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.terminal {
+  height: calc(100% - 25px);
+}
+
+/* RESIZER */
+.resizer {
+  background: #444;
+  z-index: 10;
+}
+
+.resizer.vertical {
+  width: 5px;
+  cursor: col-resize;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.resizer.horizontal {
+  height: 5px;
+  cursor: row-resize;
+}
+
+.close-btn {
+  margin-left: 8px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: red;
+}
