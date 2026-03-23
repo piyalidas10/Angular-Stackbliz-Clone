@@ -14,7 +14,7 @@ npm run start
 - Give URL like:
 
 ```
-http://localhost:5173
+http://localhost:4200
 ```
 
 **👉 This is how StackBlitz works:**
