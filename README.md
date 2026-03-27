@@ -3,6 +3,14 @@ Full StackBlitz clone codebase (Angular + WebContainer + Monaco)
 
 I’ve created a working minimal StackBlitz clone (Angular + Monaco + WebContainers) for you in the canvas.
 
+## 🧠 How StackBlitz actually works
+**StackBlitz uses:**
+```
+Editor (Monaco) → VS Code-like UI
+WebContainers (Node runtime in browser) → run server in browser
+Preview iframe → shows live app
+```
+👉 The preview updates automatically when code changes
 
 ## 🚀 How to run this locally
 ```
